@@ -1,0 +1,23 @@
+{
+  "name": "power-day-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amelcharai/power-day-api.git"
+  },
+  "author": "Amel Charai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amelcharai/power-day-api/issues"
+  },
+  "homepage": "https://github.com/amelcharai/power-day-api#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
