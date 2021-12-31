@@ -1,10 +1,10 @@
 require('dotenv').config()
 
 const express = require('express')
-const routes = require('./routes/tea')
+const compression = require('compression')
 const mongoose = require('mongoose')
 const helmet = require('helmet')
-const compression = require('compression')
+const routes = require('./routes/tea')
 
 const app = express()
 

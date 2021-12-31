@@ -8,11 +8,11 @@
   },
   "scripts": {
     "start": "node app.js",
-    "e2e": "./e2e.sh",
+    "e2e": "./e2e/e2e.sh",
     "test": "jest",
     "local": "heroku local web",
     "deploy": "git push heroku main",
-    "smoke": "curl -X POST  https://afternoon-plains-45617.herokuapp.com/tea",
+    "smoke": "curl -X GET https://afternoon-plains-45617.herokuapp.com/tea",
     "open": "heroku open",
     "logs": "heroku logs --tail"
   },
