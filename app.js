@@ -9,6 +9,11 @@ const card = require('./routes/card')
 
 const app = express()
 
+app.use(function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', "*")
+  next()
+})
+
 app.use(express.json())
 app.use('/', tea)
 app.use('/', card)

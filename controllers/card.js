@@ -21,7 +21,7 @@ const getAllCard = (req, res) => {
 }
 
 const newCard = (req, res) => {
-  Card.findOne({ name: req.body.name }, (err, data) => {
+  Card.findOne({ title: req.body.title }, (err, data) => {
     if (!data) {
       const newCard = new Card({
         title: req.body.title,
