@@ -20,6 +20,18 @@ const getAllCard = (req, res) => {
   })
 }
 
+const getOneCard = (req, res) => {
+  const title = req.params.title
+
+  Card.findOne({ title: title }, (err, data) => {
+    if(err || !data) {
+      return res.json({ message: "Card doesn't exist." })
+    } else {
+      return res.json(data)
+    }
+  })
+}
+
 const newCard = (req, res) => {
   Card.findOne({ title: req.body.title }, (err, data) => {
     if (!data) {
@@ -40,8 +52,34 @@ const newCard = (req, res) => {
   })    
 }
 
+const updateCard = (req, res) => {
+  const title = req.params.title
+  const filter = { title: title }
+  const options = {
+    new: true
+  }
+  const newCard = {
+    title: req.body.title,
+    body: req.body.body,
+    img: req.file.path,
+    video: req.body.video
+  }
+
+  Card.findOneAndUpdate(
+    filter,
+    newCard,
+    options,
+    (err, doc) => {
+      if (err) { return res.send(err) }
+      else { return res.send(doc) }
+    }
+  )
+}
+
 module.exports = {
   uploadImg,
   getAllCard,
-  newCard
+  getOneCard,
+  newCard,
+  updateCard
 }
